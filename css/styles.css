@@ -1,0 +1,196 @@
+body {
+  margin: 0px;
+  margin-bottom: 50px;
+  padding: 0px;
+  background-color: rgb(248,248,248);
+  font-family: Arial,FreeSans,sans-serif;}
+
+  body div.curved-border {
+    border: 1px solid #e1e1e1;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;}
+
+  body span.block {
+    display: inline-block;}
+
+  body div#frame {
+    margin: 0 auto;
+    width: 800px;}
+
+    body div#frame div#header {
+      border: 0px solid black;
+      display: table;
+      padding: 10px 0 5px 10px;}
+
+      body div#frame div#header div#logo {
+        display: table-cell;}
+
+      body div#frame div#header div#name-and-slogan {
+        display: table-cell;
+        vertical-align: middle;
+        font-family: "Trebuchet MS","Myriad Pro","Bitstream Vera Sans", FreeSans, sans-serif;}
+
+        body div#frame div#header div#name-and-slogan div#site-name {
+          margin-left: -2px;
+          font-size: 3.0em;
+          font-weight: 300;}
+
+          body div#frame div#header div#name-and-slogan div#site-name a {
+            text-decoration: none;
+            color: rgb(46,46,46);
+            letter-spacing: -2px;}
+
+        body div#frame div#header div#name-and-slogan div#section-slogan {
+          color: rgb(226,84,0);
+          font-size: 1.6em;
+          font-weight: 800;
+          text-transform: uppercase;
+          width: 168px;
+          line-height: 0.8em;
+          padding-bottom: 10px;
+          letter-spacing: -1px;
+          text-align: right;}
+
+      body div#frame div#header div#right-side-header {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;}
+
+    body div#frame div#content {
+      background-color: #FFFFFF;
+      padding: 10px;}
+
+  div.home h1#job-header {
+    margin: 0px;
+    color: rgb(119,145,37);
+    font-weight: 600;
+    font-size: 20px;}
+
+  div.home ul#job-list {
+    padding: 0px;}
+
+    div.home ul#job-list li {
+      list-style-type: none;
+      font-size: 14px;}
+
+      div.home ul#job-list li span.location {
+        font-weight: bold;
+        padding-right: 15px;}
+
+      div.home ul#job-list li span.job-title {
+        padding-right: 15px;
+        margin-top: 5px;}
+
+        div.home ul#job-list li span.job-title a {
+          text-decoration: none;
+          color: #086782;}
+
+        div.home ul#job-list li span.job-title a:hover {
+          text-decoration: underline;
+          color: rgb(226,84,0);}
+
+      div.home ul#job-list li span.at {
+        color: rgb(100,100,100);
+        padding-right: 8px;}
+
+      div.home ul#job-list li span.date {
+        float: right;}
+
+  div.home div#post-job {
+    float: right;
+    padding: 10px;
+    padding-top: 6px;
+    background-color: rgb(119,145,37);
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    vertical-align: center;}
+
+    div.home div#post-job a {
+      color: rgb(255,255,255);
+      font-weight: 800;
+      font-size: 15.2px;}
+
+div.post-job {
+  font-size: 13px;}
+
+  div.post-job h1.post-ad-header {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 5px;
+    font-size: 25px;}
+
+  div.post-job h4.post-section-header {
+    color: rgb(119,145,37);
+    padding: 0px;
+    margin: 0px 0px 10px 10px;
+    font-size: 17px;}
+
+  div.post-job div.input-text {
+    font-weight: bold;
+    margin-left: 10px;}
+
+    div.post-job div.input-text input#job-title {
+      width: 300px;}
+
+    div.post-job div.input-text input#job-location {
+      width: 300px;
+      margin-top: 10px;}
+
+    div.post-job div.input-text input#company-name {
+      width: 300px;}
+
+    div.post-job div.input-text input#company-url {
+      width: 300px;}
+
+    div.post-job div.input-text input#company-email {
+      width: 300px;}
+
+  div.post-job div.examples {
+    color: rgb(120,120,120);
+    margin-left: 86px;}
+
+  div.post-job div.text-field {
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 10px;}
+
+div#job-ad {
+  font-size: 16px;
+  margin-left: 10px;}
+
+  div#job-ad h1#preview-ad {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 5px;
+    font-size: 25px;}
+
+  div#job-ad h1#job-ad-header {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 5px;
+    font-size: 28px;}
+
+  div#job-ad h2#job-company-name {
+    font-size: 18px;
+    margin: 0px;}
+
+  div#job-ad div#job-location {
+    font-size: 18px;
+    margin-top: 5px;}
+
+  div#job-ad div#apply-for-job {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(240,240,250);}
+
+  div#job-ad span#edit-or-continue {
+    margin-left: 200px;}
+
