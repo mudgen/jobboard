@@ -70,7 +70,7 @@
      {:rel "Post a Job"
       :title "Post a Job"
       :href (with-home "post-job")}
-     "Post a job: $200 for 30 days"]]])
+     "Post a job"]]])
 
 (def css
   [:div.home

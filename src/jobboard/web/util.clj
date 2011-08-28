@@ -1,7 +1,5 @@
 (ns jobboard.web.util
-  (:use [jobboard.dev :only (dev)]
-        [gaka.core :only (inline-css)]
-        [hiccup.core :only (resolve-uri)])
+  (:use [gaka.core :only (inline-css)])
   (:import java.text.SimpleDateFormat
            java.util.Date))
 
@@ -10,17 +8,13 @@
    (.format formatter date) ))
 
 (defn with-home [path]
-  (if dev
-    (str "http://localhost:3000/" path)
-    (str "/" path)))  
+  (str "/" path))  
 
 (defn get-home [] 
   (with-home ""))
 
 (defn get-logo []
-  (if dev
-    "/public/corolla_log.png"
-    "/sites/default/files/corolla_logo.png"))
+  (with-home "images/blueparen-logo-small.png"))
 
 (defn s [& css]
   {:style (apply inline-css css)})

@@ -29,6 +29,7 @@
   (let [id (:_id (db/upsert-job! params))]
     (redirect-after-post (str "/preview-job-post/" id))))
 
+
 (defmethod post-preview-job [true nil] [params]
   (if-let [job (db/get-job (:_id params))]
     (if (not (:published job))

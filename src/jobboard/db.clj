@@ -19,6 +19,7 @@
     (db/fetch-by-id :job-posts (object-id id))
     (catch Exception e nil)))
 
+
 (defn get-jobs
   ([] (get-jobs nil))
   ([where]

@@ -30,7 +30,6 @@
    [:span#edit-or-continue
     :margin-left :200px]])
 
-
 (defn content
   ([params] (content params nil))
   ([params preview?]
