@@ -4,6 +4,7 @@
         [jobboard.dev :only (dev-insert-firebug)]
         [jobboard.web.util :only (get-home with-home get-logo)]))
 
+
 (defn layout
   ([content] (layout content ""))
   ([content, right-side-header]

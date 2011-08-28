@@ -7,7 +7,6 @@
             [somnium.congomongo :as db]
             [jobboard.web.core :as web]))
 
-
 (defroutes main-routes
   (GET "/" [] (web/home))
   (GET "/test" [:as request] (str request))
@@ -37,8 +36,7 @@
 (defn stop-server []
   (.stop server))
 
-(defn -main []
-  (start-server))
+(start-server)
 
 
 

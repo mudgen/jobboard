@@ -1,6 +1,5 @@
 (ns jobboard.web.core
   (:use [jobboard.web.layout :only (layout css)]
-        [jobboard.dev :only (dev)]
         [gaka.core :only (save-css)]
         [ring.util.response :only (file-response redirect-after-post)])
   (:require [jobboard.web.home :as home]
@@ -12,8 +11,7 @@
 
 
 (defn get-css [path]
-  (if dev
-    (save-css path css home/css post-job/css job/css))
+  (save-css path css home/css post-job/css job/css)
   (File. path))
 
 (defn post-job

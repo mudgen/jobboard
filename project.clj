@@ -6,7 +6,4 @@
                  [compojure "0.6.5"]
                  [congomongo "0.1.7-SNAPSHOT"]
                  [hiccup "0.3.6"]
-                 [gaka "0.2.0"]]
-  :ring {:handler jobboard.core/app
-         :destroy jobboard.db/close-connection}
-  :main jobboard.core)
+                 [gaka "0.2.0"]])
