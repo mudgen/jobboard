@@ -13,7 +13,7 @@
       [:html
        [:head
         [:title "Programming and Software Jobs"]]
-       (include-css (with-home "/css/styles.css"))
+       (include-css (with-home "css/styles.css"))
        ;;(dev-insert-firebug)
        [:body
         [:div#frame
