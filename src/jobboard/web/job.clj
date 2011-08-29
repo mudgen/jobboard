@@ -34,7 +34,6 @@
   ([params] (content params nil))
   ([params preview?]
      [:div#job-ad
-      (str params)
       (if preview?
         [:h1#preview-ad
          "Step 2: Preview your ad"
