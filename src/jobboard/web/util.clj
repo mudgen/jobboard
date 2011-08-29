@@ -8,7 +8,8 @@
    (.format formatter date) ))
 
 (defn with-home [path]
-  (str "/" path))  
+  (let [base-path (get (System/getenv) "JOBBOARD_BASE_PATH" "")]
+    (str base-path "/" path)))  
 
 (defn get-home [] 
   (with-home ""))

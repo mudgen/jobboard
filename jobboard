@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" == "start" ]; then
+    echo "Starting up java ..."
+    export JOBBOARD_BASE_PATH=/jobs
+    java -cp "lib/*:src/" clojure.main src/jobboard/core.clj &
+elif [ "$1" == "stop" ]; then
+    kill `pgrep -f "java -cp lib/\*:src/ clojure.main src/jobboard/core.clj"`
+fi
+
