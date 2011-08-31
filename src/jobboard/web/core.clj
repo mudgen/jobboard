@@ -1,5 +1,6 @@
 (ns jobboard.web.core
   (:use [jobboard.web.layout :only (layout css)]
+        [jobboard.web.util :only (with-base)]
         [gaka.core :only (save-css)]
         [ring.util.response :only (file-response redirect-after-post)])
   (:require [jobboard.web.home :as home]
@@ -11,7 +12,9 @@
 
 
 (defn get-css [path]
-  (save-css path css home/css post-job/css job/css)
+  (let [mode (get (System/getenv) "JOBBOARD_MODE" "")]
+    (when (= mode "test")
+      (save-css path css home/css post-job/css job/css)))
   (File. path))
 
 (defn post-job
@@ -25,7 +28,7 @@
 
 (defmethod post-preview-job [false nil] [params]
   (let [id (:_id (db/upsert-job! params))]
-    (redirect-after-post (str "/preview-job-post/" id))))
+    (redirect-after-post (with-base "/preview-job-post/" id))))
 
 
 (defmethod post-preview-job [true nil] [params]
@@ -33,16 +36,16 @@
     (if (not (:published job))
       (do 
         (db/upsert-job! job params)
-        (redirect-after-post (str "/preview-job-post/" (:_id params))))
+        (redirect-after-post (with-base "/preview-job-post/" (:_id params))))
       (layout "This post has already been published."))
     (layout "Could not find job.")))
 
 (defmethod post-preview-job [true "Edit Post"] [params]
-  (redirect-after-post (str "/post-job/" (:_id params))))
+  (redirect-after-post (with-base "/post-job/" (:_id params))))
 
 (defmethod post-preview-job [true "Publish Post"] [params]
   (db/upsert-job! {:_id  (:_id params) :published (Date.)})
-  (redirect-after-post "/"))
+  (redirect-after-post (with-base "/")))
 
 (defmethod post-preview-job :default [params]
   (layout "Bad http post."))

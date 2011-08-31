@@ -2,7 +2,7 @@
   (:use [hiccup.core :only (html)]
         [hiccup.page-helpers :only (doctype include-css include-js javascript-tag)]
         [jobboard.dev :only (dev-insert-firebug)]
-        [jobboard.web.util :only (get-home with-home get-logo)]))
+        [jobboard.web.util :only (get-home with-base get-logo)]))
 
 
 (defn layout
@@ -13,7 +13,7 @@
       [:html
        [:head
         [:title "Programming and Software Jobs"]]
-       (include-css (with-home "css/styles.css"))
+       (include-css (with-base "/css/styles.css"))
        ;;(dev-insert-firebug)
        [:body
         [:div#frame
@@ -26,7 +26,6 @@
             [:img
              {:style "border: 0;"
               :alt "Job Board"
-;              :src (with-home "/images/blueparen-logo-small-smaller.png")
               :src (get-logo) 
               }]]]
           [:div#name-and-slogan

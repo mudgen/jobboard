@@ -1,7 +1,7 @@
 (ns jobboard.web.job
   (:use [hiccup.form-helpers :only (text-field file-upload submit-button form-to hidden-field)]
         [hiccup.page-helpers :only (link-to)]
-        [jobboard.web.util :only (s space with-home)]))
+        [jobboard.web.util :only (s space with-base)]))
 
 (def css
   [:div#job-ad
@@ -38,7 +38,7 @@
         [:h1#preview-ad
          "Step 2: Preview your ad"
          [:span.block {:id "edit-or-continue"}
-          (form-to [:post (with-home "preview-job-post")]
+          (form-to [:post (with-base "/preview-job-post")]
                    (hidden-field "_id" (:_id params))
                    [:input {:type "submit" :name "action" :value "Edit Post"}] " | "
                    [:input {:type "submit" :name "action" :value "Publish Post"}])]])

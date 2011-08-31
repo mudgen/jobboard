@@ -7,15 +7,15 @@
   (let [formatter (SimpleDateFormat. "d MMMM")]
    (.format formatter date) ))
 
-(defn with-home [path]
+(defn with-base [& path]
   (let [base-path (get (System/getenv) "JOBBOARD_BASE_PATH" "")]
-    (str base-path "/" path)))  
+    (apply str base-path path)))  
 
 (defn get-home [] 
-  (with-home ""))
+  (with-base "/"))
 
 (defn get-logo []
-  (with-home "images/blueparen-logo-small.png"))
+  (with-base "/images/blueparen-logo-small.png"))
 
 (defn s [& css]
   {:style (apply inline-css css)})

@@ -1,5 +1,5 @@
 (ns jobboard.web.home
-  (:use [jobboard.web.util :only (with-home display-date)]
+  (:use [jobboard.web.util :only (with-base display-date)]
         [hiccup.page-helpers :only (link-to)]))
 
 (def content-css
@@ -41,7 +41,7 @@
             [:ul#job-list
              [:li
               [:span.location (:job-location job)]
-              [:span.job-title (link-to (with-home (str "job/" (:_id job))) (:job-title job))]
+              [:span.job-title (link-to (with-base "/job/" (:_id job)) (:job-title job))]
               [:span.at "at"]
               [:span.company (:company-name job)]
               [:span.date (display-date (:published job))]]]) params)])
@@ -69,7 +69,7 @@
     [:a
      {:rel "Post a Job"
       :title "Post a Job"
-      :href (with-home "post-job")}
+      :href (with-base "/post-job")}
      "Post a job"]]])
 
 (def css

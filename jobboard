@@ -1,10 +1,36 @@
 #!/bin/bash
+start_java="java -cp lib/*:src/:resources/ clojure.main src/jobboard/core.clj"
+port=8080
+
+function start {
+    export JOBBOAD_MODE=test
+    export JOBBOARD_BASE_PATH=/jobs
+    export JOBBOARD_PORT=$port
+    echo "Starting jobboard ..."
+    $start_java &
+    listen 1
+}
+
+function stop {
+    echo "Stopping jobboard ..."
+    kill `pgrep -f "${start_java//\*/\\*}"`
+    listen 0
+}
+
+function listen {
+    LISTEN_PORT=`netstat -vatn | grep LISTEN| grep $port | wc -l `
+    while [ $LISTEN_PORT -ne $1 ] ; do
+        sleep 1
+        LISTEN_PORT=`netstat -vatn | grep LISTEN| grep $port | wc -l `
+    done
+ }
 
 if [ "$1" == "start" ]; then
-    echo "Starting up java ..."
-    export JOBBOARD_BASE_PATH=/jobs
-    java -cp "lib/*:src/:resources/" clojure.main src/jobboard/core.clj &
+    start
 elif [ "$1" == "stop" ]; then
-    kill `pgrep -f "java -cp lib/\*:src/:resources/ clojure.main src/jobboard/core.clj"`
+    stop
+elif [ "$1" == "restart" ]; then
+    stop
+    start
 fi
 

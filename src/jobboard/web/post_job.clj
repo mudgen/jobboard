@@ -1,6 +1,6 @@
 (ns jobboard.web.post-job
   (:use [hiccup.form-helpers :only (text-field file-upload submit-button form-to text-area hidden-field)]
-        [jobboard.web.util :only (s space with-home)]))
+        [jobboard.web.util :only (s space with-base)]))
 
 (def css
   [:div.post-job
@@ -46,7 +46,7 @@
     [:h4.post-section-header
      "Tell us about the position"]
     (form-to
-     [:post (with-home "preview-job-post")]
+     [:post (with-base "/preview-job-post")]
      (when-let [id (:_id params)]
        (hidden-field "_id" (str id)))
      [:div.input-text
