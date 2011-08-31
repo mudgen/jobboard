@@ -36,7 +36,7 @@
 (defn content [params]
   [:div.home
    [:h1#job-header
-    "Jobs."]
+    "Jobs.."]
    (map (fn [job]
             [:ul#job-list
              [:li
