@@ -1,6 +1,7 @@
 # jobboard
 
 This is a simple job board web appliction writtin in Clojure and using Compojure and MongoDB.
+The jobboard may be live here: http://blueparen.com/jobs
 
 ## Usage
 
