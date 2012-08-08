@@ -33,6 +33,7 @@
       [:span.date
        :float "right"]]]))
 
+
 (defn content [params]
   [:div.home
    [:h1#job-header

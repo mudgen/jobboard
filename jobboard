@@ -33,4 +33,4 @@ elif [ "$1" == "restart" ]; then
     stop
     start
 fi
-
+exit
