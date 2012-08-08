@@ -18,10 +18,10 @@ function stop {
 }
 
 function listen {
-    LISTEN_PORT=`netstat -vatn | grep LISTEN| grep $port | wc -l `
+    LISTEN_PORT=`netstat -vatn | grep LISTEN | grep $port | wc -l `
     while [ $LISTEN_PORT -ne $1 ] ; do
         sleep 1
-        LISTEN_PORT=`netstat -vatn | grep LISTEN| grep $port | wc -l `
+        LISTEN_PORT=`netstat -vatn | grep LISTEN | grep $port | wc -l `
     done
  }
 
